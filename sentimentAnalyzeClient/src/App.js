@@ -54,7 +54,10 @@ class App extends React.Component {
           default: color = "yellow";
         }
         output = <div style={{color:color,fontSize:20}}>{output}</div>
-        this.setState({sentimentOutput:output});
+        // console.log("time from sendForSentimentAnalysis function before state change: ",new Date())
+        this.setState({sentimentOutput:output},()=>{
+            // console.log("state from sendForSentimentAnalysis function after state change: ",this.state.sentimentOutput)
+        });
       })});
   }
 
@@ -73,7 +76,7 @@ class App extends React.Component {
   
 
   render() {
-    return (  
+        return (  
       <div className="App">
       <button className="btn btn-info" onClick={()=>{this.renderOutput('text')}}>Text</button>
         <button className="btn btn-dark"  onClick={()=>{this.renderOutput('url')}}>URL</button>

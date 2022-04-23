@@ -3,9 +3,11 @@ import './bootstrap.min.css';
 
 class EmotionTable extends React.Component {
     render() {
+        console.log(new Date())
       //Returns the emotions as an HTML table
       return (  
         <div>
+            the result tables
           <table className="table table-bordered">
             <tbody>
             {
